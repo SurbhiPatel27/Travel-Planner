@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7f2">
+  <title>Roam — Travel Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Roam home"><span>✦</span> roam</a>
+    <span class="tagline">Your next adventure, thoughtfully planned.</span>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">A little more adventure</p>
+      <h1>Make room<br>for <span>somewhere</span>.</h1>
+      <p class="intro-copy">Plan your days, keep an eye on your budget, and make a trip that feels like yours.</p>
+      <div class="travel-stamp" aria-hidden="true">GO<br>SEE<br>THE<br>WORLD <span>✈</span></div>
+    </section>
+
+    <section class="planner" aria-label="Travel planner">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow">YOUR TRIP</p>
+          <h2>Trip planner</h2>
+        </div>
+        <span class="saved-note" id="savedNote" aria-live="polite">Saved on this device</span>
+      </div>
+
+      <form id="tripForm">
+        <div class="field">
+          <label for="destination">Where are you going?</label>
+          <input id="destination" name="destination" placeholder="e.g. Kyoto, Japan" required maxlength="70">
+        </div>
+        <div class="date-grid">
+          <div class="field">
+            <label for="startDate">From</label>
+            <input id="startDate" name="startDate" type="date">
+          </div>
+          <div class="field">
+            <label for="endDate">To</label>
+            <input id="endDate" name="endDate" type="date">
+          </div>
+        </div>
+
+        <div class="section-title">
+          <label for="activityName">The itinerary</label>
+          <span>Little plans, big memories</span>
+        </div>
+        <div class="activity-entry">
+          <input id="activityName" placeholder="Add an activity or place" maxlength="100">
+          <input id="activityCost" type="number" min="0" step="0.01" placeholder="Cost" aria-label="Activity cost">
+          <button class="add-button" type="submit">Add</button>
+        </div>
+
+        <ul class="activities" id="activities"></ul>
+        <p class="empty-state" id="emptyState">Your itinerary is waiting for its first idea ✨</p>
+
+        <div class="budget">
+          <div><span class="budget-label">Estimated activity total</span><span class="budget-sub">Based on costs you add</span></div>
+          <strong id="totalCost">$0.00</strong>
+        </div>
+        <div class="actions">
+          <button class="clear-button" id="clearButton" type="button">Start a new trip</button>
+          <span class="privacy-note">Your plans stay in this browser.</span>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>Made for curious people everywhere <span>✦</span></footer>
+</body>
+</html>
